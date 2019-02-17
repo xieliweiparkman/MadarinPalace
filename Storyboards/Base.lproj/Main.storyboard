@@ -165,7 +165,10 @@
                                         </cells>
                                     </collectionView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjK-GE-fUV">
-                                        <rect key="frame" x="0.0" y="161.5" width="375" height="82.5"/>
+                                        <rect key="frame" x="146.5" y="161.5" width="82" height="82.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tjK-GE-fUV" secondAttribute="height" multiplier="1:1" id="o5V-26-zJs"/>
+                                        </constraints>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YTT-A7-VGC">
                                         <rect key="frame" x="0.0" y="245" width="375" height="303.5"/>
@@ -211,16 +214,15 @@
                                     <constraint firstItem="IV1-LS-jSS" firstAttribute="leading" secondItem="07v-cA-iyQ" secondAttribute="leading" id="L7R-nY-fTi"/>
                                     <constraint firstItem="1TP-GL-Q7E" firstAttribute="leading" secondItem="07v-cA-iyQ" secondAttribute="leading" id="M7b-7d-D0V"/>
                                     <constraint firstAttribute="trailing" secondItem="IV1-LS-jSS" secondAttribute="trailing" id="OfJ-J6-se8"/>
-                                    <constraint firstAttribute="trailing" secondItem="tjK-GE-fUV" secondAttribute="trailing" id="TlB-vg-HCm"/>
                                     <constraint firstItem="tjK-GE-fUV" firstAttribute="height" secondItem="07v-cA-iyQ" secondAttribute="height" multiplier="0.15" id="UkU-Ct-nKm"/>
                                     <constraint firstItem="vmE-sL-h1V" firstAttribute="top" secondItem="07v-cA-iyQ" secondAttribute="top" id="Zhf-Nu-01p"/>
                                     <constraint firstAttribute="trailing" secondItem="vmE-sL-h1V" secondAttribute="trailing" id="a9a-7R-NxA"/>
                                     <constraint firstItem="tjK-GE-fUV" firstAttribute="top" secondItem="IV1-LS-jSS" secondAttribute="bottom" id="d12-Ti-ZgG"/>
-                                    <constraint firstItem="tjK-GE-fUV" firstAttribute="leading" secondItem="07v-cA-iyQ" secondAttribute="leading" id="hS7-UO-lXF"/>
                                     <constraint firstItem="IV1-LS-jSS" firstAttribute="top" secondItem="vmE-sL-h1V" secondAttribute="bottom" id="igG-5a-RSC"/>
                                     <constraint firstItem="YTT-A7-VGC" firstAttribute="leading" secondItem="07v-cA-iyQ" secondAttribute="leading" id="kB9-VA-8qj"/>
                                     <constraint firstItem="vmE-sL-h1V" firstAttribute="leading" secondItem="07v-cA-iyQ" secondAttribute="leading" id="xS8-f1-8hX"/>
                                     <constraint firstItem="YTT-A7-VGC" firstAttribute="top" secondItem="1TP-GL-Q7E" secondAttribute="bottom" id="xm1-Ri-6uq"/>
+                                    <constraint firstItem="tjK-GE-fUV" firstAttribute="centerX" secondItem="07v-cA-iyQ" secondAttribute="centerX" id="y6y-WH-q1O"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fii-pl-vJP">

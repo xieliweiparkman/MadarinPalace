@@ -126,6 +126,7 @@ final class LoginViewModel: LoginViewModelProtocol {
         .feedActivity(into: activity)
         .suppressAndFeedError(into: errors)
         .doOn(next: { [weak self] _ in
+        self?.firebaseService.setUserPhone(phone: self?.phoneNumber.value ?? "")
         self?.appNotificationService.setDeviceToken()
         })
         .observeNext(with: { [weak self] _ in

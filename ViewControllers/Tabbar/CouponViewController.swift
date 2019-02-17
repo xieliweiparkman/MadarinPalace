@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import DropDown
+import EFQRCode
 
 class CouponViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mainView: UIView!
@@ -31,6 +32,7 @@ class CouponViewController: UIViewController, UITextFieldDelegate {
         bindViewModel()
         updateUI()
         addDropDownList()
+        createQRCode()
     }
     
     func updateUI() {
@@ -102,6 +104,26 @@ class CouponViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(ok)
         alert.view.tintColor = UIColor.appGreenColor()
         present(alert, animated: true, completion: nil)
+    }
+    
+    func createQRCode() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let user = UserDefaults.standard
+        if let data = user.data(forKey: "userQRCodeData") {
+            let image = UIImage(data: data)
+            barCodeImageView.image = image
+        } else {
+            if let tryImage = EFQRCode.generate(
+                content: userID,
+                watermark: UIImage(named: "AppLogo")?.toCGImage()
+                ) {
+                print("Create QRCode image success: \(tryImage)")
+                let image = UIImage(cgImage: tryImage)
+                let imageData = UIImagePNGRepresentation(image)
+                UserDefaults.standard.set(imageData, forKey: "userQRCodeData")
+                barCodeImageView.image = UIImage(cgImage: tryImage)
+            }
+        }
     }
 }
 

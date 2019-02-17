@@ -14,7 +14,7 @@ import ReactiveKit
 protocol FirebaseServiceProtocol {
     var userOrdersData: Observable<[String: Any]?> { get }
     func getUserInfo() -> Signal<Void, AppError>
-    func setUserEmail(email: String)
+    func setUserPhone(phone: String)
     func setName(name: String)
 }
 
@@ -39,9 +39,9 @@ class FirebaseService: FirebaseServiceProtocol {
 
 
 
-    func setUserEmail(email: String) {
+    func setUserPhone(phone: String) {
         guard let currentUser = Auth.auth().currentUser else { return }
-        Database.database().reference().child("users/\(currentUser.uid)/email").setValue(email)
+        Database.database().reference().child("users/\(currentUser.uid)/phone").setValue(phone)
     }
     
     func setName(name: String) {

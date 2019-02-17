@@ -31,7 +31,7 @@ class CouponViewModel: CouponViewModelProtocol {
     fileprivate let bag = DisposeBag()
     
     init(userId: String) {
-        barCodeImage.value = generateBarcode(userId: userId)
+        //barCodeImage.value = generateBarcode(userId: userId)
         userDetailsService.buffetTimes.bind(to: buffetTimes)
         userDetailsService.name.bind(to: name)
         didTapOnLogoutButton.observeNext {            

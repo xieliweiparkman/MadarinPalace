@@ -71,6 +71,7 @@ class TabBarCoordinator: NSObject, AppCoordinator {
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
+            UserDefaults.standard.removeObject(forKey: "userQRCodeData")
             coordinator.next(.showIntroScreen())
         }
     }
